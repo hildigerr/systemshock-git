@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Systemshock
+Comment=Cross platform port of System Shock
+Exec=systemshock
+Icon=Systemshock-1-icon.png
+Categories=Game;
