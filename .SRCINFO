@@ -1,0 +1,22 @@
+pkgbase = systemshock-git
+	pkgdesc = Cross platform port of System Shock
+	pkgver = 0.7.8_g38ede87e_dirty
+	pkgrel = 1
+	url = https://github.com/Interrupt/systemshock
+	install = systemshock.install
+	arch = x86_64
+	license = GPL
+	makedepends = git
+	makedepends = cmake
+	depends = sdl2
+	depends = sdl2_mixer
+	provides = systemshock
+	source = systemshock::git+https://github.com/Interrupt/systemshock
+	source = nobundle.patch
+	source = xxx-user-home-res-dir.patch
+	md5sums = SKIP
+	md5sums = 63a0155056bbc57db0562747c13c57d9
+	md5sums = 61fadcac0da1e6998267ecc666f11f47
+
+pkgname = systemshock-git
+

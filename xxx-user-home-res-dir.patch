@@ -1,0 +1,33 @@
+diff --git a/src/Libraries/RES/Source/caseless.c b/src/Libraries/RES/Source/caseless.c
+index be1c1536..bcfeee68 100644
+--- a/src/Libraries/RES/Source/caseless.c
++++ b/src/Libraries/RES/Source/caseless.c
+@@ -19,6 +19,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ 
+ // DG 2018: a case-insensitive fopen() wrapper, and functions used by it
+ 
++#include <stdlib.h>
+ #include <assert.h>
+ #include <string.h>
+ #include <stdio.h>
+@@ -239,12 +240,18 @@ int caselesspath(const char *inpath, char *outpath, int wantdir) {
+ #endif // not Windows
+ }
+ 
+-FILE *fopen_caseless(const char *path, const char *mode) {
++FILE *fopen_caseless(const char *xpath, const char *mode) {
+     FILE *ret = NULL;
+ 
+-    if (path == NULL || mode == NULL)
++    if (xpath == NULL || mode == NULL)
+         return NULL;
+ 
++//XXX
++    const int XSIZE = 500;
++    char path[XSIZE];
++    snprintf( path, XSIZE, "%s/.systemshock/%s", getenv("HOME"), xpath );
++//XXX
++
+     ret = fopen(path, mode);
+ 
+ #ifndef _WIN32 // not windows

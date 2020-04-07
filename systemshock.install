@@ -1,0 +1,8 @@
+
+post_install() {
+	echo "To play System Shock:"
+    echo "  You need to provide the original cd-rom or SS:EE assets"
+    echo "  CDROM/DATA/* and HD/DATA/* from the cd-rom go in"
+    echo "    ~/.systemshock/res/DATA"
+    echo "  and HD/SOUND/* goes in ~/.systemshock/res/SOUND"
+}
